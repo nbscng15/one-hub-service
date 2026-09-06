@@ -9,6 +9,7 @@ import com.benifex.one_hub_service.dto.request.EmployeeRequestDTO;
 import com.benifex.one_hub_service.services.impl.BaseServiceImpl;
 import com.benifex.one_hub_service.validation.groups.ValidationForRequest;
 import jakarta.transaction.Transactional;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -35,7 +36,7 @@ public class EmployeeServiceImpl extends BaseServiceImpl implements EmployeeServ
 					.setTitle(employeeRequestDTO.getTitle())
 					.setFirstName(employeeRequestDTO.getFirstName())
 					.setSurName(employeeRequestDTO.getSurName())
-					.setDateOfBirth(LocalDateTime.parse(employeeRequestDTO.getDateOfBirth()))
+					.setDateOfBirth(LocalDate.parse(employeeRequestDTO.getDateOfBirth()))
 					.setGender(employeeRequestDTO.getGender())
 					.setEmail(employeeRequestDTO.getEmail())
 					.setAddress(employeeRequestDTO.getAddress());

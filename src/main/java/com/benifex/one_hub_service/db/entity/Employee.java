@@ -7,7 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 import java.sql.Types;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -43,8 +43,8 @@ public class Employee extends AuditTrail {
 	private String surName;
 
 	@Column(name = "date_of_birth")
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private LocalDateTime dateOfBirth;
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private LocalDate dateOfBirth;
 
 	@Column(name = "gender")
 	private String gender;
